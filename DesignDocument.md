@@ -19,7 +19,6 @@
 ## System Design
 
 ```mermaid
-
 graph TB
 
 subgraph smarthouse-backend
