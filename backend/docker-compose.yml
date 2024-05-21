@@ -5,8 +5,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: smart_house_auth
-      POSTGRES_USER: maksgirya
-      POSTGRES_PASSWORD: i347599Max!
+      POSTGRES_USER: rsushe
+      POSTGRES_PASSWORD: 123456
     ports:
       - "5432:5432"
     volumes:
@@ -15,8 +15,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: smart_house_core
-      POSTGRES_USER: maksgirya
-      POSTGRES_PASSWORD: i347599Max!
+      POSTGRES_USER: rsushe
+      POSTGRES_PASSWORD: 123456
     ports:
       - "5433:5432"
     volumes:
