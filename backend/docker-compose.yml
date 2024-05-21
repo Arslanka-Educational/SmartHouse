@@ -5,8 +5,8 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: smart_house_auth
-      POSTGRES_USER: rsushe
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: maksgirya
+      POSTGRES_PASSWORD: i347599Max!
     ports:
       - "5432:5432"
     volumes:
@@ -15,12 +15,18 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: smart_house_core
-      POSTGRES_USER: rsushe
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: maksgirya
+      POSTGRES_PASSWORD: i347599Max!
     ports:
       - "5433:5432"
     volumes:
       - my_db_volume:/var/lib/postgresql/data_core
+  my-redis-stack:
+    image: redis:latest
+    container_name: my-redis-stack
+    ports:
+      - "6379:6379"
+      - "8001:8001"
 
 volumes:
   my_db_volume:
