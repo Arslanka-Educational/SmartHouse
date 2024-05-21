@@ -1,4 +1,4 @@
-package com.smart.house.auth.model
+package com.smart.house.model.auth
 
 import java.util.UUID
 

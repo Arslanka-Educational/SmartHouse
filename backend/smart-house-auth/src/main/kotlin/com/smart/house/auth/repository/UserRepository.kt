@@ -1,7 +1,7 @@
 package com.smart.house.auth.repository
 
-import com.smart.house.auth.model.User
 import com.smart.house.auth.plugins.DatabaseSingleton.dbQuery
+import com.smart.house.model.auth.User
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert
