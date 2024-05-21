@@ -1,0 +1,17 @@
+ktor:
+  application:
+    modules:
+      - com.smart.house.auth.SmartHouseAuthApplicationKt.module
+  deployment:
+    port: 8080
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "jdbc:postgresql://localhost:5432/smart_house_auth"
+    username: rsushe
+    password: 123456
+
+jwt:
+  issuer: "http://localhost"
+  audience: "jwt-audience"
+  realm: "ktor sample app"
+  secret: "secret"

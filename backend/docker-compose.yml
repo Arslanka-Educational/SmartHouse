@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  smart_house_auth:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: smart_house_auth
+      POSTGRES_USER: rsushe
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    volumes:
+      - my_db_volume:/var/lib/postgresql/data_auth
+  smart_house_core:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: smart_house_core
+      POSTGRES_USER: rsushe
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5433:5432"
+    volumes:
+      - my_db_volume:/var/lib/postgresql/data_core
+
+volumes:
+  my_db_volume:
