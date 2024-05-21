@@ -1,0 +1,11 @@
+ktor:
+  application:
+    modules:
+      - com.smart.house.db.SmartHouseDbApplicationKt.module
+  deployment:
+    port: 8082
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "jdbc:postgresql://localhost:5433/smart_house_core"
+    username: rsushe
+    password: 123456
