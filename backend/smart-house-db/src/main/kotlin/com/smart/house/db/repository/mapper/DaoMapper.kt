@@ -15,7 +15,7 @@ import org.jetbrains.exposed.sql.ResultRow
 fun ResultRow.toHouseJson(): House = House(
     id = this[HouseDAO.id],
     name = this[HouseDAO.name],
-    userLogin = this[HouseDAO.userLogin],
+    userId = this[HouseDAO.userId],
     deleted = this[HouseDAO.deleted],
     createdAt = this[HouseDAO.createdAt],
     updatedAt = this[HouseDAO.updatedAt],

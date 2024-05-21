@@ -12,7 +12,7 @@ import java.util.UUID
 object HouseDAO : Table("houses") {
     val id = uuid("id")
     val name = text("name")
-    val userLogin = text("user_login")
+    val userId = text("user_id")
     val deleted = bool("deleted")
     val createdAt = datetime("created_at")
     val updatedAt = datetime("updated_at")
@@ -22,9 +22,11 @@ object HouseDAO : Table("houses") {
 
 class HouseRepository {
     suspend fun findHouse(id: UUID): House? = dbQuery {
-        HouseDAO.select {
-            (HouseDAO.id eq id)
-        }.mapNotNull { it.toHouseJson() }.singleOrNull()
+        HouseDAO.select { HouseDAO.id eq id }.mapNotNull { it.toHouseJson() }.singleOrNull()
+    }
+
+    suspend fun findUserHouses(userId: String): List<House> = dbQuery {
+        HouseDAO.select { HouseDAO.userId eq userId }.mapNotNull { it.toHouseJson() }
     }
 
     suspend fun saveHouse(house: House): House {
@@ -32,7 +34,7 @@ class HouseRepository {
             HouseDAO.insert {
                 it[id] = house.id
                 it[name] = house.name
-                it[userLogin] = house.userLogin
+                it[userId] = house.userId
                 it[createdAt] = house.createdAt
                 it[updatedAt] = house.updatedAt
             }

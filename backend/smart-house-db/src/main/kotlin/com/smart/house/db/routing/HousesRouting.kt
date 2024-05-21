@@ -6,7 +6,6 @@ import com.smart.house.model.House
 import io.ktor.server.application.call
 import io.ktor.server.request.receive
 import io.ktor.server.response.respond
-import io.ktor.server.response.respondText
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.get
 import io.ktor.server.routing.post
@@ -28,9 +27,9 @@ fun Route.housesRoute() {
             call.respond(houseService.saveHouse(houseToSave))
         }
 
-        get("/") {
-            call.respondText("Not implemented")
-            // todo получить дома по юзеру
+        get("/{userId}") {
+            val userId = call.parameters["userId"]!!
+            call.respond(houseService.getUserHouses(userId))
         }
     }
 }

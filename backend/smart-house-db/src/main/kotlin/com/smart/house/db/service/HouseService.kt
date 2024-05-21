@@ -11,5 +11,7 @@ class HouseService(
     suspend fun getHouse(id: UUID): House = repository.findHouse(id)
         ?: throw NotFoundException("House with id=$id is not found")
 
+    suspend fun getUserHouses(userId: String): List<House> =  repository.findUserHouses(userId)
+
     suspend fun saveHouse(house: House): House = repository.saveHouse(house)
 }
