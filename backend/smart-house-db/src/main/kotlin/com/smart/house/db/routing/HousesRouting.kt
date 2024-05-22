@@ -22,7 +22,7 @@ fun Route.housesRoute() {
             call.respond(house)
         }
 
-        post("/") {
+        post("") {
             val houseToSave = call.receive<House>()
             call.respond(houseService.saveHouse(houseToSave))
         }

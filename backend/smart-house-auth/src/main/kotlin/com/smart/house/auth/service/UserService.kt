@@ -1,7 +1,7 @@
 package com.smart.house.auth.service
 
-import com.smart.house.auth.model.User
 import com.smart.house.auth.repository.UserRepository
+import com.smart.house.model.auth.User
 import io.ktor.server.plugins.NotFoundException
 
 class UserService(

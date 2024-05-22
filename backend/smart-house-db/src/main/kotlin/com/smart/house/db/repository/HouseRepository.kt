@@ -35,6 +35,7 @@ class HouseRepository {
                 it[id] = house.id
                 it[name] = house.name
                 it[userId] = house.userId
+                it[deleted] = house.deleted
                 it[createdAt] = house.createdAt
                 it[updatedAt] = house.updatedAt
             }
