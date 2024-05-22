@@ -195,7 +195,7 @@ fun HouseCard(house: House, onHouseClick: () -> Unit) {
                 painter = image,
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.FillBounds,
                 alpha = 0.7F
             )
             Text(
