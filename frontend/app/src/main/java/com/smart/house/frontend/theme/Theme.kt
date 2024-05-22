@@ -7,12 +7,11 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val Yellow = Color(0xFFFFC107)
-val Pink = Color(0xffd92086)
+val Green = Color(0xFF4CAF50)
 
 private val DarkColorScheme = darkColors (
     primary = Color.Gray,
-    secondary = Pink,
+    secondary = Green,
     background = Color.Black,
     surface = Color.Black,
     onPrimary = Color.White,
@@ -23,7 +22,7 @@ private val DarkColorScheme = darkColors (
 
 private val LightColorScheme = lightColors(
     primary = Color.Gray,
-    secondary = Pink,
+    secondary = Green,
     background = Color.White,
     surface = Color.White,
     onPrimary = Color.White,

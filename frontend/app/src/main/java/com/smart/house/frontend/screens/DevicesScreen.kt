@@ -1,5 +1,6 @@
 package com.smart.house.frontend.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -7,18 +8,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedTextField
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Switch
 import androidx.compose.material.Text
@@ -28,7 +23,6 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.Scaffold
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -39,12 +33,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun DevicesScreen() {
+fun DevicesScreen(navController: NavController) {
     val showDialog = remember { mutableStateOf(false) }
 
     Scaffold (
@@ -55,7 +50,7 @@ fun DevicesScreen() {
                     .height(100.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                BackButton()
+                BackButton(navController)
 
                 Box(
                     modifier = Modifier.fillMaxWidth(),
@@ -143,18 +138,17 @@ fun CustomSwitch(state: Boolean) {
 }
 
 @Composable
-fun BackButton() {
-//    val navController = Navigator.current
+fun BackButton(navController: NavController) {
     Icon(
         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
         contentDescription = null,
         modifier = Modifier
             .padding(start = 8.dp)
             .clip(CircleShape)
-//            .clickable {
-//                navController.navigateUp()
-//            }
-//            .padding(16.dp)
+            .clickable {
+                navController.navigateUp()
+            }
+            .padding(16.dp)
     )
 }
 
@@ -244,8 +238,8 @@ fun DeviceDialog(
     }
 }
 
-@Preview (showBackground = true, name = "DevicesScreen")
+@Preview(showBackground = true, name = "DevicesScreen")
 @Composable
 fun ScreenPreview() {
-    DevicesScreen()
+    DevicesScreen(rememberNavController())
 }

@@ -29,6 +29,6 @@ fun AppNavigator() {
 
     NavHost(navController = navController, startDestination = "housesScreen") {
         composable("housesScreen") { HousesScreen(navController) }
-        composable("devicesScreen") { DevicesScreen() }
+        composable("devicesScreen") { DevicesScreen(navController) }
     }
 }
