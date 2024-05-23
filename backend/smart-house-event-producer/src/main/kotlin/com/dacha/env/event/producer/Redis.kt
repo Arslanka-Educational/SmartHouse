@@ -35,7 +35,6 @@ fun configureScheduler() {
     executor.scheduleAtFixedRate(
         {
             val houses: List<House> = client.getQueue<House>(HOUSES_QUEUE).poll(CHUNK_SIZE)
-
             houses.forEach { house ->
                 EnvType.values().forEach { envType ->
                     client

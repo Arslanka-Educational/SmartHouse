@@ -3,9 +3,14 @@ ktor:
     modules:
       - com.smart.house.core.SmartHouseCoreApplicationKt.module
   deployment:
-    port: 8081
+    port: 8581
   client:
     auth:
-      host: "http://localhost:8080"
+      host: "http://localhost:8580"
     db:
-      host: "http://localhost:8082"
+      host: "http://localhost:8582"
+
+storage:
+  redis:
+    url: "redis://localhost:6379"
+    topic: "logs"
