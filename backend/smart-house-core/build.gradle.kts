@@ -37,6 +37,9 @@ dependencies {
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.0")
 
     implementation(project(mapOf("path" to ":smart-house-model")))
+    implementation("org.redisson:redisson:3.21.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation(project(mapOf("path" to ":smart-house-db")))
 
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
